@@ -13,5 +13,55 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <div id="container" *ngIf="!(user && role)">
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-text color="primary">You are not yet logged in, please log in to access the system.</ion-text>
+        <pwa-auth 
+          style="margin-top:5ex; margin-left: 15ex;"
+          #pwaAuthElement 
+          appearance="list" 
+          microsoftkey="d3b67eef-1eb9-46b3-abdc-dd0309d6e40b"
+          googlekey="173801571194-t3e6tgnq8b73c1bp66kmfv7sn74cjvgd.apps.googleusercontent.com"
+          facebookkey="874942086331393"
+        ></pwa-auth>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </div>
+
+  <div *ngIf="user && role">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button>
+            <ion-icon name="person"></ion-icon>
+            <ion-label>Profile</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button>
+            <ion-icon name="setting"></ion-icon>
+            <ion-label>Setting</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button>
+            <ion-icon name="cash"></ion-icon>
+            <ion-label>Discounts</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!-- <app-explore-container name="Tab 3 page">
+
+  </app-explore-container> -->
 </ion-content>
