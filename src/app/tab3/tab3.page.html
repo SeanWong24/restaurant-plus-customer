@@ -3,6 +3,11 @@
     <ion-title>
       Tab 3
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToSettingsPage()">
+        <ion-icon slot="icon-only" name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -19,14 +24,10 @@
       </ion-col>
       <ion-col>
         <ion-text color="primary">You are not yet logged in, please log in to access the system.</ion-text>
-        <pwa-auth 
-          style="margin-top:5ex; margin-left: 15ex;"
-          #pwaAuthElement 
-          appearance="list" 
+        <pwa-auth style="margin-top:5ex; margin-left: 15ex;" #pwaAuthElement appearance="list"
           microsoftkey="d3b67eef-1eb9-46b3-abdc-dd0309d6e40b"
           googlekey="173801571194-t3e6tgnq8b73c1bp66kmfv7sn74cjvgd.apps.googleusercontent.com"
-          facebookkey="874942086331393"
-        ></pwa-auth>
+          facebookkey="874942086331393"></pwa-auth>
       </ion-col>
       <ion-col></ion-col>
     </ion-row>
@@ -45,7 +46,7 @@
       <ion-row>
         <ion-col>
           <ion-button>
-            <ion-icon name="setting"></ion-icon>
+            <ion-icon name="settings"></ion-icon>
             <ion-label>Setting</ion-label>
           </ion-button>
         </ion-col>
@@ -55,6 +56,13 @@
           <ion-button>
             <ion-icon name="cash"></ion-icon>
             <ion-label>Discounts</ion-label>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="logout()">
+            <ion-label>Log out</ion-label>
           </ion-button>
         </ion-col>
       </ion-row>
